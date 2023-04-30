@@ -11,6 +11,7 @@
 '''
 import math as m
 
+# Создаю одну функцию для всего
 def calc(x,y):
     a = x+y
     b = x-y
