@@ -18,8 +18,8 @@ result = {}
 
 for tuple_name in pets:
 
-
     key =tuple(tuple_name[-3:])
+    
     if key not in result:
         result.setdefault(key,[tuple_name[0]])
     else:
