@@ -1,3 +1,9 @@
+Вам доступен текстовый файл nums.txt. В файле могут быть записаны целые 
+неотрицательные числа и все, что угодно. Числом назовем последовательность одной и более цифр, идущих подряд (число всегда неотрицательно).
+
+Напишите программу, которая вычисляет сумму всех чисел, записанных в файле.
+
+
 from string import ascii_lowercase as az
 file_name = 'nums.txt'
 
@@ -22,8 +28,15 @@ for i in range(len(file)):
         
 print(total)        
 
+#Итоговый вариант
+file_name = 'nums.txt'
 
-with open('nums.txt', encoding='utf-8') as file:
-    print(list(map(int, ''.join(list(map(lambda x: x if x.isdigit() else ' ', file.read()))).split())))
+with open(file_name, 'r', encoding='utf-8') as file_open:
+     file = file_open.read()
+     
+tmp_dig = ''
+
+for i in file:
+    tmp_dig += str(i) if str(i).isdigit() else ' '
     
-    print(sum(map(int, ''.join(list(map(lambda x: x if x.isdigit() else ' ', file.read()))).split())))
+print(sum([int(x) for x in tmp_dig.split()]))
